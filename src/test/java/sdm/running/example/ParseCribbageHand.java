@@ -17,4 +17,15 @@ public class ParseCribbageHand {
                 () -> assertEquals('♣', cribbageHand.starterCard().suite())
         );
     }
+
+    @Test
+    void withStarterCardAceOfSpades() {
+        CribbageHandParser cribbageHandParser = new CribbageHandParser();
+        CribbageHand cribbageHand = cribbageHandParser.parse("5♥5♦5♠J♣A♠");
+        assertAll(
+                () -> assertEquals('A', cribbageHand.starterCard().rank()),
+                () -> assertEquals('♠', cribbageHand.starterCard().suite())
+        );
+    }
+    
 }
