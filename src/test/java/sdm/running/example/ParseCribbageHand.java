@@ -37,4 +37,16 @@ public class ParseCribbageHand {
         };
         assertArrayEquals(expectedHandCards, cribbageHand.handCards());
     }
+
+    @Test
+    void withHandCardsThreeOfEachSuite() {
+        CribbageHand cribbageHand = cribbageHandParser.parse("3♥3♦3♠3♣A♠");
+        Card[] expectedHandCards = {
+                new Card('3', '♥'),
+                new Card('3', '♦'),
+                new Card('3', '♠'),
+                new Card('3', '♣')
+        };
+        assertArrayEquals(expectedHandCards, cribbageHand.handCards());
+    }
 }

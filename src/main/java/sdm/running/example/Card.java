@@ -31,4 +31,9 @@ public class Card {
         result = 31 * result + rank.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "" + rank + suite;
+    }
 }
