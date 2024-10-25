@@ -1,5 +1,6 @@
 package sdm.running.example;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -32,4 +33,9 @@ public class ParseCard {
         assertEquals('♦', card.suite());
     }
 
+    @Test
+    void withRankFive() {
+        Card card = cardParser.parse("5♦");
+        assertEquals('5', card.rank());
+    }
 }
