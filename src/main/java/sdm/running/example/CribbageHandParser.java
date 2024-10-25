@@ -4,17 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CribbageHandParser {
+
+    private final CardParser cardParser = new CardParser();
+
     public CribbageHand parse(String cribbageHandAsString) {
-        String starterCardAsString = cribbageHandAsString.substring(8);
-        CardParser cardParser = new CardParser();
-        
+        List<Card> handCards = parseHandCards(cribbageHandAsString);
+        Card starterCard = parseStarterCard(cribbageHandAsString);
+        return new CribbageHand(handCards, starterCard);
+    }
+
+    private List<Card> parseHandCards(String cribbageHandAsString) {
         String handCardsAsString = cribbageHandAsString.substring(0, 8);
         List<Card> handCards = new ArrayList<>();
         for (int i = 0; i < 7; i+=2) {
             String handCard = handCardsAsString.substring(i, i + 2);
             handCards.add(cardParser.parse(handCard));
         }
+        return handCards;
+    }
 
-        return new CribbageHand(handCards, cardParser.parse(starterCardAsString));
+    private Card parseStarterCard(String cribbageHandAsString) {
+        String starterCardAsString = cribbageHandAsString.substring(8);
+        return cardParser.parse(starterCardAsString);
     }
 }
