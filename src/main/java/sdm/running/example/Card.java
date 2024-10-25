@@ -16,4 +16,19 @@ public class Card {
     public Character rank() {
         return rank;
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card card)) return false;
+
+        return suite.equals(card.suite) && rank.equals(card.rank);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = suite.hashCode();
+        result = 31 * result + rank.hashCode();
+        return result;
+    }
 }

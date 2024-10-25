@@ -2,8 +2,7 @@ package sdm.running.example;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ParseCribbageHand {
 
@@ -27,4 +26,15 @@ public class ParseCribbageHand {
         );
     }
 
+    @Test
+    void withHandCardsFiveOfEachSuite() {
+        CribbageHand cribbageHand = cribbageHandParser.parse("5♥5♦5♠5♣A♠");
+        Card[] expectedHandCards = {
+                new Card('5', '♥'),
+                new Card('5', '♦'),
+                new Card('5', '♠'),
+                new Card('5', '♣')
+        };
+        assertArrayEquals(expectedHandCards, cribbageHand.handCards());
+    }
 }

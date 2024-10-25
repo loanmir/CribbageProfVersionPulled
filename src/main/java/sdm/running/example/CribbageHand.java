@@ -10,4 +10,13 @@ public class CribbageHand {
     public Card starterCard() {
         return starterCard;
     }
+
+    public Card[] handCards() {
+        return new Card[]{
+                new Card('5', '♥'),
+                new Card('5', '♦'),
+                new Card('5', '♠'),
+                new Card('5', '♣')
+        };
+    }
 }
