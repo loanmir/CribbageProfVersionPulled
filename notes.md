@@ -17,7 +17,7 @@
 - 0♦J♥Q♠A♣9♦ -> score is 4 (run of four)
 - "5♥5♦5♠J♣5♣" -> four hand cards (five of Hearts,...) and a starter card (five of Clubs)
 - "5♥" -> card with rank 5
-- "5♥" -> card with suite Hearts
-- "5♦" -> card with suite Diamonds
-- "5♣" -> card with suite Clubs
-- "5♠" -> card with suite Spades
+~~- "5♥" -> card with suite Hearts~~
+~~- "5♦" -> card with suite Diamonds~~
+~~- "5♣" -> card with suite Clubs~~
+~~- "5♠" -> card with suite Spades~~

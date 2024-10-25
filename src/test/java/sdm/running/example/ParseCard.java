@@ -6,11 +6,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParseCard {
 
+    private final CardParser cardParser = new CardParser();
+
     @Test
     void withSuiteSpades() {
-        CardParser cardParser = new CardParser();
         Card card = cardParser.parse("5♠");
         assertEquals('♠', card.suite());
     }
-    
+
+    @Test
+    void withSuiteHearts() {
+        Card card = cardParser.parse("5♥");
+        assertEquals('♥', card.suite());
+    }
+
+    @Test
+    void withSuiteClubs() {
+        Card card = cardParser.parse("5♣");
+        assertEquals('♣', card.suite());
+    }
+
+    @Test
+    void withSuiteDiamonds() {
+        Card card = cardParser.parse("5♦");
+        assertEquals('♦', card.suite());
+    }
+
 }
