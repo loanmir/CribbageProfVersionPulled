@@ -1,13 +1,13 @@
 package sdm.running.example;
 
 public class CribbageHand {
-    private final Card card;
+    private final Card starterCard;
 
-    public CribbageHand(Card card) {
-        this.card = card;
+    public CribbageHand(Card starterCard) {
+        this.starterCard = starterCard;
     }
 
     public Card starterCard() {
-        return card;
+        return starterCard;
     }
 }

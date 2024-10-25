@@ -1,10 +1,9 @@
 package sdm.running.example;
 
 public class CribbageHandParser {
-    public CribbageHand parse(String s) {
-        String starterCardAsString = s.substring(8);
+    public CribbageHand parse(String cribbageHandAsString) {
+        String starterCardAsString = cribbageHandAsString.substring(8);
         CardParser cardParser = new CardParser();
-        Card card = cardParser.parse(starterCardAsString);
-        return new CribbageHand(card);
+        return new CribbageHand(cardParser.parse(starterCardAsString));
     }
 }
