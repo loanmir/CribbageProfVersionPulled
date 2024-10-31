@@ -28,3 +28,15 @@
 ~~- "5♣" -> card with suite Clubs~~
 ~~- "5♠" -> card with suite Spades~~
 
+Pairs
+- 8♥8♦4♠A♣5♣ -> score is 2
+  - 8♥8♦4♠A♣5♣ -> one pair
+- 2♥2♦2♠A♣5♣ -> score is 6
+  - 2♥2♦2♠A♣5♣ -> three pairs
+- 3♥3♦3♠A♣3♣ -> score is 12
+  - 3♥3♦3♠A♣3♣ -> six pairs
+
+Flush
+- 0♥J♥K♥A♥9♦ -> score is 4
+- 0♥J♥K♥A♥9♥ -> score is 5
+
